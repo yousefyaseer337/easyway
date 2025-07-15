@@ -1,120 +1,132 @@
-body{
+/*
+ * هذا الملف يحتوي على أنماط CSS لجعل التصميم متجاوبًا مع جميع الأجهزة.
+ * تم استخدام استعلامات الوسائط (Media Queries) لتكييف الأنماط بناءً على حجم الشاشة.
+ */
+
+body {
     font-family: cursive;
     margin: 5px;
     padding: 5px;
     background-color: rgb(22, 22, 21);
-   width: 100%;
-
+    width: 100%;
 }
 
-header{
+header {
     margin-right: 20px;
     width: 95%;
     padding: 10px;
     height: max-content;
-        
-    background-color:  rgb(22, 33, 30) ;
-    border: 2px  rgb(240, 118, 3) solid;
+    background-color: rgb(22, 33, 30);
+    border: 2px rgb(240, 118, 3) solid;
     border-radius: 30px;
-    
+    display: flex; /* استخدام flexbox لتخطيط أفضل */
+    flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
 }
 
 header .logo {
     display: flex;
-    width: 80%;
-
+    width: auto; /* السماح للعرض بالتكيف */
     padding: 4px;
     margin: 4px;
+    align-items: center;
 }
 
-header .logo h2{
-    display: inline-block;
+header .logo h2 {
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
     color: rgb(247, 110, 25);
-    margin-top: 30px;
+    margin-top: 0; /* تعديل الهامش العلوي */
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* حجم خط متجاوب */
 }
 
-.search{
-    
+.search {
     text-align: center;
-    display: inline;
-    
+    display: block; /* جعل حقل البحث كتلة لسهولة التخطيط */
+    margin-top: 10px; /* إضافة هامش علوي */
 }
-#search{
+
+#search {
     width: 150px;
+    max-width: 90%; /* تحديد أقصى عرض لحقل البحث */
     height: 30px;
     border: 3px orangered solid;
     border-radius: 10px;
     background: none;
-    
     color: aliceblue;
-    
-    
 }
 
-header nav{
-    
+header nav {
+    width: auto; /* السماح للعرض بالتكيف */
     text-align: right;
-    
 }
 
-header nav ul{
+header nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* محاذاة العناصر إلى اليمين */
+    padding: 0; /* إزالة الحشوة الافتراضية للقائمة */
+    margin: 0; /* إزالة الهامش الافتراضي للقائمة */
+    flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
 }
 
-header nav ul li{
-    margin: 5px;
+header nav ul li {
+    margin: 5px 10px; /* تعديل الهامش بين عناصر القائمة */
 }
 
-header nav ul li a{
+header nav ul li a {
     text-decoration: none;
     color: aliceblue;
-    font-size: x-large;
-
-    
+    font-size: clamp(1rem, 2vw, 1.2rem); /* حجم خط متجاوب */
     border-radius: 5px;
+    padding: 5px 10px; /* إضافة حشوة للروابط */
+    transition: all 0.3s ease; /* إضافة انتقال سلس للتأثيرات */
 }
-header nav ul li a:hover{
+
+header nav ul li a:hover {
     color: orangered;
-    font-size: xx-large;
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem); /* حجم خط متجاوب عند التحويم */
 }
 
-
-article{
+article {
     color: bisque;
+    padding: 10px; /* إضافة حشوة للمقالة */
 }
-article h1{
+
+article h1 {
     color: rgb(255, 85, 0);
+    font-size: clamp(2rem, 5vw, 3rem); /* حجم خط متجاوب */
 }
 
-
-
-
-main{
+main {
     display: flex;
+    flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
     padding: 30px;
-    justify-content: space-between;
-    
+    justify-content: space-around; /* توزيع العناصر بالتساوي مع مسافة حولها */
     color: blanchedalmond;
     margin: 50px 10px;
 }
-section{
-    width: 33%;
+
+section {
+    width: 30%; /* تحديد عرض الأقسام */
+    min-width: 280px; /* تحديد الحد الأدنى لعرض القسم لمنع التضييق الشديد */
     height: max-content;
-    border: 5px rgb(240, 98, 10) ;
-    border-style: outset ;
+    border: 5px rgb(240, 98, 10);
+    border-style: outset;
     border-radius: 20px;
     text-align: center;
-    margin: 20px;
-}
-section img{
-    width: 90%;
+    margin: 20px auto; /* توسيط الأقسام */
+    box-sizing: border-box; /* تضمين الحشوة والحدود في العرض */
 }
 
-.sec1{
+section img {
+    width: 90%;
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 15px; /* إضافة حواف مستديرة للصور */
+}
+
+.sec1 {
     display: inline-block;
     width: 80px;
     height: 30px;
@@ -123,73 +135,248 @@ section img{
     text-align: center;
     margin: 5px;
     padding: 5px;
-    
+    transition: background-color 0.3s ease; /* إضافة انتقال سلس للتأثيرات */
 }
 
-section a{
+.sec1:hover {
+    background-color: rgb(255, 120, 0); /* تغيير اللون عند التحويم */
+}
+
+section a {
     text-decoration: none;
     color: antiquewhite;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-footer{
+footer {
     margin-right: 20px;
-    width: 99%;
+    width: 95%; /* تعديل العرض ليتناسب مع الرأس */
     padding: 10px;
     height: max-content;
-        
-    background-color:  rgb(31, 24, 24) ;
-    
+    background-color: rgb(31, 24, 24);
     border-radius: 10px;
-    
+    display: flex; /* استخدام flexbox لتخطيط أفضل */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-
-footer nav{
-    width: 80%;
+footer nav {
+    width: auto;
     text-align: right;
-    
 }
 
-footer nav ul{
+footer nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
 }
 
-footer nav ul li{
-    margin: 5px;
+footer nav ul li {
+    margin: 5px 10px;
 }
 
-footer nav ul li a{
+footer nav ul li a {
     text-decoration: none;
     color: aliceblue;
-    font-size: x-large;
-
-    
+    font-size: clamp(1rem, 2vw, 1.2rem);
     border-radius: 5px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
 }
-footer nav ul li a:hover{
+
+footer nav ul li a:hover {
     color: orangered;
-    font-size: xx-large;
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
 }
 
-.whats{
-
+.whats {
     color: antiquewhite;
-    width: 90%;
+    width: 44%; /* السماح للعرض بالتكيف */
     display: flex;
-    
-    
 
+    align-items: center;
+    margin-left: 44%; /* إضافة هامش لليسار */
 }
-.whats a{
-    
-    width: 50px;
-    height: 30px;
+
+.whats a {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.whats ins{
-    margin-left: 40%;
-    margin-top: 50px;
+
+.whats ins {
+    margin-left: 20px; /* تعديل الهامش لليسار */
+    margin-top: 0; /* إزالة الهامش العلوي */
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* حجم خط متجاوب */
+}
+
+/* -------------------------------------------------------------------------- */
+/* Media Queries                               */
+/* -------------------------------------------------------------------------- */
+
+/* للشاشات الصغيرة جدًا (الهواتف الذكية الصغيرة) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* ترتيب العناصر عموديًا */
+        text-align: center;
+    }
+
+    header .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column; /* ترتيب عناصر القائمة عموديًا */
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .search {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    #search {
+        width: 80%;
+    }
+
+    main {
+        flex-direction: column; /* ترتيب الأقسام عموديًا */
+        padding: 15px;
+        margin: 20px 5px;
+    }
+
+    section {
+        width: 90%; /* جعل الأقسام تأخذ عرضًا أكبر */
+        margin: 15px auto;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer nav {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    footer nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer nav ul li {
+        margin: 10px 0;
+    }
+
+    .whats {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .whats ins {
+        margin-left: 10px;
+    }
+}
+
+/* للشاشات المتوسطة (الأجهزة اللوحية) */
+@media (min-width: 481px) and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    .search {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    main {
+        flex-direction: column; /* يمكن أن تظل عمودية أو صفين حسب التصميم المفضل */
+        padding: 20px;
+        margin: 30px 10px;
+    }
+
+    section {
+        width: 70%; /* عرض أكبر للأقسام */
+        margin: 20px auto;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer nav {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    footer nav ul {
+        justify-content: center;
+    }
+
+    .whats {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+/* للشاشات الكبيرة (أجهزة الكمبيوتر المكتبية) */
+@media (min-width: 769px) {
+    header {
+        flex-direction: row;
+    }
+
+    header nav ul {
+        justify-content: flex-end;
+    }
+
+    main {
+        flex-direction: row;
+    }
+
+    section {
+        width: 30%;
+    }
+
+    footer {
+        flex-direction: row;
+    }
 }
