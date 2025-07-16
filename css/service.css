@@ -1,0 +1,323 @@
+body{
+    font-family: cursive;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(22, 22, 21);
+    width: 98%;
+}
+header{
+    margin-right: 20px;
+    width: 95%;
+    padding: 10px;
+    height: max-content;
+        
+    background-color:  rgb(22, 33, 30) ;
+    border: 2px  rgb(240, 118, 3) solid;
+    border-radius: 30px;
+    display: flex; /* استخدام flexbox لتخطيط أفضل */
+    
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+}
+
+header .logo {
+    display: flex;
+    width: auto; /* السماح للعرض بالتكيف */
+    padding: 4px;
+    margin: 4px;
+    align-items: center;
+}
+header .logo h2{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    color: rgb(247, 110, 25);
+    margin-top: 0; /* تعديل الهامش العلوي */
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* حجم خط متجاوب */
+}
+
+header nav{
+    width: auto; /* السماح للعرض بالتكيف */
+    
+
+}
+header nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* استخدام flexbox لتخطيط القائمة */
+    
+
+}
+header nav ul li{
+    margin: 0 10px; /* إضافة مسافة بين العناصر */
+}
+header nav ul li a{
+    text-decoration: none;
+    color: rgb(247, 110, 25);
+    font-size: clamp(1rem, 2vw, 1.5rem); /* حجم خط متجاوب */
+    padding: 5px 10px; /* إضافة حشوة لتحسين المظهر */
+    transition: color 0.3s ease; /* تأثير انتقال سلس عند التمرير */
+}
+header nav ul li a:hover{
+    color: orangered; /* تغيير اللون عند التمرير */
+}
+header nav ul li a.active{
+    color: orangered; /* لون الرابط النشط */
+    font-weight: bold; /* جعل النص عريضًا */
+}
+header nav ul li a:visited{
+    color: rgb(247, 110, 25); /* لون الروابط التي تمت زيارتها */
+}
+
+header .logo img {
+    width: 50px; /* تحديد عرض الصورة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 50%; /* جعل الصورة دائرية */
+    margin-right: 10px; /* إضافة مسافة بين الصورة والنص */
+}
+
+main{
+    width: 95%;
+    margin: 20px auto; /* توسيط المحتوى */
+    padding: 20px;
+    background-color: rgb(22, 33, 30);
+    border: 2px orangered solid;
+    border-radius: 30px;
+    color: rgb(247, 110, 25);
+    font-size: clamp(1rem, 2vw, 1.5rem); /* حجم خط متجاوب */
+}
+section{
+    width: 16%; /* جعل كل قسم يأخذ 30% من عرض الصفحة */
+    margin: 10px; /* إضافة مسافة بين الأقسام */
+    display: inline-block; /* جعل الأقسام في صف واحد */
+    margin-bottom: 20px; /* إضافة مسافة بين الأقسام */
+    padding: 10px;
+    background-color: rgb(22, 33, 30);
+    border: 1px orangered solid;
+    border-radius: 15px;
+    color: rgb(247, 110, 25);
+    font-size: clamp(1rem, 2vw, 1.5rem); /* حجم خط متجاوب */
+    line-height: 1.6; /* تحسين تباعد الأسطر */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للقسم */
+    transition: transform 0.3s ease; /* تأثير انتقال سلس عند التمرير */
+
+}
+section h2{
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* حجم خط متجاوب */
+    margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+}
+section p{
+    line-height: 1.6; /* تحسين تباعد الأسطر */
+    margin-bottom: 10px; /* إضافة مسافة أسفل الفقرة */
+}
+section img{
+    width: 100%; /* جعل الصورة تأخذ عرض القسم بالكامل */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 10px; /* إضافة زوايا دائرية للصورة */
+    margin-top: 10px; /* إضافة مسافة أعلى الصورة */
+}
+section .bt{
+    text-align: center; /* توسيط الزر */
+    margin-top: 10px; /* إضافة مسافة أعلى الزر */
+}
+section .bt a{
+    text-decoration: none;
+    color: rgb(209, 201, 196);
+    background-color: orangered; /* لون خلفية الزر */
+    padding: 10px 20px; /* إضافة حشوة للزر */
+    border-radius: 5px; /* إضافة زوايا دائرية للزر */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التمرير */
+}
+section .bt a:hover{
+    background-color: rgb(235, 101, 5); /* تغيير لون الخلفية عند التمرير */
+}
+
+
+
+footer{
+    width: 100%;
+    height: max-content;
+    
+    margin: 20px auto; /* توسيط المحتوى */
+    background-color: rgb(22, 33, 30);
+    border: 2px orangered solid;
+    border-radius: 30px;
+    text-align: center;
+    padding: 10px;
+    color: rgb(215, 206, 201);
+    font-size: clamp(1rem, 2vw, 1.5rem); /* حجم خط متجاوب */
+}
+footer p{
+    margin: 0; /* إزالة الهامش الافتراضي */
+}
+footer nav{
+    margin-top: 10px; /* إضافة مسافة أعلى القائمة */
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem); /* حجم خط متجاوب */
+    color: rgb(247, 110, 25);
+    display: flex; /* استخدام flexbox لتخطيط القائمة */
+    justify-content: center; /* توسيط العناصر */
+    flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
+
+}
+footer nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* استخدام flexbox لتخطيط القائمة */
+}
+footer nav ul li{
+    margin: 0 10px; /* إضافة مسافة بين العناصر */
+}
+footer nav ul li a{
+    text-decoration: none;
+    color: rgb(247, 110, 25);
+    transition: color 0.3s ease; /* تأثير انتقال سلس عند التمرير */
+}
+footer nav ul li a:hover{
+    color: orangered; /* تغيير اللون عند التمرير */
+}
+
+
+/* للشاشات الصغيرة جدًا (الهواتف الذكية الصغيرة) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* ترتيب العناصر عموديًا */
+        text-align: center;
+    }
+
+    header .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column; /* ترتيب عناصر القائمة عموديًا */
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+
+    main {
+        flex-direction: column; /* ترتيب الأقسام عموديًا */
+        padding: 15px;
+        margin: 20px 5px;
+    }
+
+    section {
+        width: 96%; /* جعل الأقسام تأخذ عرضًا أكبر */
+        margin: 15px auto;
+        padding: 10px; /* إضافة حشوة داخلية */
+        box-shadow: none; /* إزالة الظل */
+        border-radius: 10px; /* جعل الزوايا دائرية */
+        border: 1px solid orangered; /* إضافة إطار */
+        
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer nav {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    footer nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer nav ul li {
+        margin: 10px 0;
+    }
+
+}
+
+/* للشاشات المتوسطة (الأجهزة اللوحية) */
+@media (min-width: 481px) and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    main {
+        flex-direction: column; /* يمكن أن تظل عمودية أو صفين حسب التصميم المفضل */
+        padding: 20px;
+        margin: 30px 10px;
+    }
+
+    section {
+        width: 26%; /* عرض أكبر للأقسام */
+        margin: 20px auto;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer nav {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    footer nav ul {
+        justify-content: center;
+    }
+
+    .whats {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+/* للشاشات الكبيرة (أجهزة الكمبيوتر المكتبية) */
+@media (min-width: 769px) {
+    header {
+        flex-direction: row;
+    }
+
+    header nav ul {
+        justify-content: flex-end;
+    }
+
+    main {
+        flex-direction: row;
+    }
+
+    section {
+        width: 16%;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+}
+
